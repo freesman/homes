@@ -33,8 +33,13 @@ AppGallery = Backbone.Epoxy.View.extend(
     this.add('фото 4', 'gal4')
     this.add('фото 5', 'gal5')
     this.add('фото 6', 'gal6')
+    this.add('фото 7', 'gal7')
+    this.add('фото 8', 'gal8')
+    this.add('фото 9', 'gal9')
+    this.add('фото 10', 'gal10')
+    this.add('фото 11', 'gal11')
   add: (nameH, pictureH)->
-    pictureH = '../img/gallery/' + pictureH + '.png'
+    pictureH = '../img/gallery/' + pictureH + '.jpg'
     idH = this.collection.length + 1
     this.collection.add({name: nameH, picture: pictureH, id: idH})
 )

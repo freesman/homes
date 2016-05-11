@@ -14,6 +14,10 @@ AppView = Backbone.View.extend(
   singleGallery: (e)->
     srcAttr = e.currentTarget.src
     $('.singleImg').attr('src', srcAttr)
+    $('.image').removeClass('active')
+    $('.planeFirst').removeClass('active')
+    $('.planeSecond').removeClass('active')
+    $(e.currentTarget).addClass('active')
   closeGallery: ->
     $('body').css('overflow', 'auto')
   openThumbImg: (e)->

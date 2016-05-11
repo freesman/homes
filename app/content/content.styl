@@ -3,12 +3,12 @@
   width 1000px
   border thin solid #BB9C6D
   border-radius 20px
-  margin-top 10px
+  margin-top 20px
   background url('img/planshet3.png') 435px 6px no-repeat, url('img/plane2.jpg') repeat
   box-shadow 5px 5px 8px rgba(0,0,0,0.5)
   
 .plane
-  background url('img/paper7.png') repeat
+  background url('img/paper.png') repeat
   margin 20px
   margin-top 46px
   margin-right 40px
@@ -17,28 +17,28 @@
   border-top-right-radius 10px
   min-height 720px
 
-.homes, .baths, .photos
+.homes, .baths
   height 210px
   width 200px
-  margin-top 15px
+  margin-top 25px
   margin-left 66px
   display inline-block
   cursor pointer
   vertical-align top
-  border thin solid black
   &:hover
-    border thin solid red
+    &.homes h3
+      text-decoration underline
+    &.baths h3
+      text-decoration underline
   
 body 
   background url('img/wood-1.png') repeat
   //background-color #EEE8CD
   
 .main
-  height 500px
   width 820px
   margin-top 20px
   margin-left 20px
-  border thin solid black
   
 .main p, .main h2, .main img
   margin-left 10px
@@ -50,13 +50,22 @@ body
   z-index 30
   background-color #949494
   height 1px
-  top 45px
+  top 43px
+.hidetabs
+  position absolute
+  height 4px
+  width 920px
+  //background-color blue
+  z-index 30
+  margin-top 35px
+  background url('img/paper.png') repeat
 #firstTab
   margin-left -2px
 .ui-tabs
   padding 0
   margin-top -12px
   border-color transparent
+  position relative
 .ui-tabs .ui-tabs-nav
   padding 0px
 .ui-tabs .ui-tabs-nav li
@@ -91,55 +100,93 @@ body
 
 #tab-main
   background url('img/color1.png') repeat
+  transform skewY(1deg)
+  z-index 30
   &:hover
     border-color blue
+    //transform skewY(1deg)
 #tab-home
   background url('img/color2.png') repeat
+  transform skewY(-1deg)
 #tab-bath
   background url('img/color3.png') repeat
+  transform skewY(1deg)
 #tab-gallery
   background url('img/color4.png') repeat
+  transform skewY(-1deg)
 #tab-another
   background url('img/color5.png') repeat
+  transform skewY(1deg)
 
 
 .homes h3, .baths h3, .works h3
   margin-left 55px
   margin-bottom 0px
   margin-top 0px
+  padding-bottom 2px
  
 .homes span, .baths span
   margin-left 55px
 
 
 // single item when open
+.project
+  font-family: 'Roboto Slab', serif;
+  font-weight 300
+  font-size 30px
+  padding-bottom 20px
+  text-align center
 .hideLi
   display none
+
   
-.singleImg, .singleGallery
+.singleImg, .singleGallery, .butClose
   display inline-block
   vertical-align top
+  margin-left 30px
+  margin-top 15px
+
+.butClose
+  background url('img/back.png') no-repeat//, url('img/back7.png') no-repeat
+  background-size 110px 70px
+  height 70px
+  width 130px
+  margin-left 10px
+  margin-top -55px
+  cursor pointer
+  &:hover
+    background-position 1px 1px
+    //background url('img/back2.png') 5px 5px no-repeat//, url('img/back7.png') no-repeat
   
 .singleGallery
   height 460px
   width 160px
-  border thin solid black
   
 .singleGallery .image, .singleGallery .planeFirst, .singleGallery .planeSecond
   height 150px
   width 150px
-  border thin solid black
+  &:hover
+    border-right 1px solid black
+
+.active
+    border-right 1px solid gray
   
 
 // gallery
 .works
   height 200px
   width 200px
-  margin-top 15px
+  margin-top 20px
+  margin-bottom 15px
   margin-left 66px
   display inline-block
   cursor pointer
   vertical-align top
-  border thin solid black
+  &.works img
+    border 4px solid #c0c0c0
   &:hover
-    border thin solid red
+    &.works img
+      border 4px solid gray
+
+  
+  

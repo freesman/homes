@@ -1,4 +1,5 @@
 hr.line
+.hidetabs
 #tabs
   ul
     li(id='firstTab')
@@ -16,8 +17,13 @@ hr.line
 
   #tabs-main
     .main
-      h2 Дома для вас
-      p Ищете классные и дешевые дома? Тогда мы идем к вам!
+      h2 Мы занимаемся строительством домов из профилированного бруса.
+      ul
+        li проектирование будущего сооружения
+        li установка фундамента
+        li возведение силовой части здания
+        li кровельные работы
+        li отделка
       img(src='content/img/home.jpg' height='350px' width='470px')
   #tabs-homes(data-bind = 'collection:$collection')
   #tabs-baths(data-bind = 'collection:$collection')
@@ -29,9 +35,12 @@ hr.line
       li окна
       li отделка
   #tabs-single
+    .project проект ева
     img.singleImg(src='content/img/home-3d.png' height='460px' width='500px')
     .singleGallery(data-id = '')
       img.image(src='content/img/home-3d.png' height='150px' width='150px')
       img.planeFirst(src='content/img/home-1p.png' height='150px' width='150px')
       img.planeSecond(src='content/img/home-2p.png' height='150px' width='150px')
-    button.butClose close
+    .butClose
+    .price цена 500 $
+    .description 5кв бревно 150 бла бла

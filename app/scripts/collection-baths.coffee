@@ -27,6 +27,11 @@ BathView = Backbone.Epoxy.View.extend(
     $('.image').attr('src', bathpath + '/bath-3d.png')
     $('.planeFirst').attr('src', bathpath + '/bath-1p.png')
     $('.planeSecond').attr('src', bathpath + '/bath-2p.png')
+    $('.project').text('проект ' + this.model.get('name'))
+    $('.price').text('цена ' + this.model.get('price'))
+    $('.planeFirst').removeClass('active')
+    $('.planeSecond').removeClass('active')
+    $('.image').addClass('active')
     $( "#tabs" ).tabs({active: 5})
 )
 
@@ -43,7 +48,7 @@ AppBath = Backbone.Epoxy.View.extend(
     this.add('наталья', 'natalya', '30 000', 'natalya')
   add: (nameH, pictureH, priceH, modelH)->
     pictureH = '../img/baths/' + pictureH + '.png'
-    priceH = priceH + '$'
+    priceH = priceH + ' руб.'
     this.collection.add({name: nameH, picture: pictureH, price: priceH, model: modelH})
 )
 

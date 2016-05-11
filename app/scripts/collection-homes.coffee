@@ -27,6 +27,11 @@ HomeView = Backbone.Epoxy.View.extend(
     $('.image').attr('src', homepath + '/home-3d.png')
     $('.planeFirst').attr('src', homepath + '/home-1p.png')
     $('.planeSecond').attr('src', homepath + '/home-2p.png')
+    $('.project').text('проект ' + this.model.get('name'))
+    $('.price').text('цена ' + this.model.get('price'))
+    $('.planeFirst').removeClass('active')
+    $('.planeSecond').removeClass('active')
+    $('.image').addClass('active')
     $( "#tabs" ).tabs({active: 5})
 )
 
@@ -43,7 +48,7 @@ AppHome = Backbone.Epoxy.View.extend(
     this.add('яромир', 'yaromir', '47 000', 'yaromir')
   add: (nameH, pictureH, priceH, modelH)->
     pictureH = '../img/homes/' + pictureH + '.png'
-    priceH = priceH + ' ₽'
+    priceH = priceH + ' руб.'
     this.collection.add({name: nameH, picture: pictureH, price: priceH, model: modelH})
 )
 
