@@ -236,6 +236,16 @@
 			}
 		},
 		{
+			"contents": "Searching 48 files for \"overflow\"\n\nD:\\web\\yesman\\app\\tabs.js:\n   58  		var position = this.css( \"position\" ),\n   59  			excludeStaticParent = position === \"absolute\",\n   60: 			overflowRegex = includeHidden ? /(auto|scroll|hidden)/ : /(auto|scroll)/,\n   61  			scrollParent = this.parents().filter( function() {\n   62  				var parent = $( this );\n   ..\n   64  					return false;\n   65  				}\n   66: 				return overflowRegex.test( parent.css( \"overflow\" ) + parent.css( \"overflow-y\" ) + parent.css( \"overflow-x\" ) );\n   67  			}).eq( 0 );\n   68  \n   ..\n 1400  					$( this ).innerHeight() + $( this ).height() ) );\n 1401  			})\n 1402: 			.css( \"overflow\", \"auto\" );\n 1403  		} else if ( heightStyle === \"auto\" ) {\n 1404  			maxHeight = 0;\n\nD:\\web\\yesman\\app\\content\\tabs.js:\n   58  		var position = this.css( \"position\" ),\n   59  			excludeStaticParent = position === \"absolute\",\n   60: 			overflowRegex = includeHidden ? /(auto|scroll|hidden)/ : /(auto|scroll)/,\n   61  			scrollParent = this.parents().filter( function() {\n   62  				var parent = $( this );\n   ..\n   64  					return false;\n   65  				}\n   66: 				return overflowRegex.test( parent.css( \"overflow\" ) + parent.css( \"overflow-y\" ) + parent.css( \"overflow-x\" ) );\n   67  			}).eq( 0 );\n   68  \n   ..\n 1400  					$( this ).innerHeight() + $( this ).height() ) );\n 1401  			})\n 1402: 			.css( \"overflow\", \"auto\" );\n 1403  		} else if ( heightStyle === \"auto\" ) {\n 1404  			maxHeight = 0;\n\nD:\\web\\yesman\\app\\libs\\jquery.fancybox.js:\n  222  \n  223  				F.wrap.stop(true).removeClass('fancybox-opened');\n  224: 				F.inner.css('overflow', 'hidden');\n  225  \n  226  				F.transitions[F.current.closeMethod]();\n  ...\n  667  \n  668  				F.wrap.stop(true).removeClass('fancybox-opened');\n  669: 				F.inner.css('overflow', 'hidden');\n  670  \n  671  				F.transitions[F.current.prevMethod]();\n  ...\n  910  			F.isOpen = F.isOpened = true;\n  911  \n  912: 			F.wrap.addClass('fancybox-opened').css('overflow', 'visible');\n  913  \n  914  			F.update();\n  915  \n  916: 			F.inner.css('overflow', current.scrolling === 'auto' ? 'auto' : (current.scrolling === 'yes' ? 'scroll' : 'hidden'));\n  917  \n  918  			//Assign a click event\n\nD:\\web\\yesman\\app\\libs\\jquery.fancybox.pack.js:\n    5  nextEffect:\"elastic\",nextSpeed:300,nextEasing:\"swing\",nextMethod:\"changeIn\",prevEffect:\"elastic\",prevSpeed:300,prevEasing:\"swing\",prevMethod:\"changeOut\",helpers:{overlay:{speedIn:0,speedOut:0,opacity:0.85,css:{cursor:\"pointer\",\"background-color\":\"rgba(0, 0, 0, 0.85)\"},closeClick:!0},title:{type:\"float\"}}},group:{},opts:{},coming:null,current:null,isOpen:!1,isOpened:!1,wrap:null,outer:null,inner:null,player:{timer:null,isActive:!1},ajaxLoad:null,imgPreload:null,transitions:{},helpers:{},open:function(b,\n    6  c){d.isArray(b)||(b=[b]);if(b.length)a.close(!0),a.opts=d.extend(!0,{},a.defaults,c),a.group=b,a._start(a.opts.index||0)},cancel:function(){if(!(a.coming&&!1===a.trigger(\"onCancel\"))&&(a.coming=null,a.hideLoading(),a.ajaxLoad&&a.ajaxLoad.abort(),a.ajaxLoad=null,a.imgPreload))a.imgPreload.onload=a.imgPreload.onabort=a.imgPreload.onerror=null},close:function(b){a.cancel();if(a.current&&!1!==a.trigger(\"beforeClose\"))a.unbindEvents(),!a.isOpen||b&&!0===b[0]?(d(\".fancybox-wrap\").stop().trigger(\"onReset\").remove(),\n    7: a._afterZoomOut()):(a.isOpen=a.isOpened=!1,d(\".fancybox-item\").remove(),a.wrap.stop(!0).removeClass(\"fancybox-opened\"),a.inner.css(\"overflow\",\"hidden\"),a.transitions[a.current.closeMethod]())},play:function(b){var c=function(){clearTimeout(a.player.timer)},e=function(){c();if(a.current&&a.player.isActive)a.player.timer=setTimeout(a.next,a.current.playSpeed)},g=function(){c();d(\"body\").unbind(\".player\");a.player.isActive=!1;a.trigger(\"onPlayEnd\")};if(a.player.isActive||b&&!1===b[0])g();else if(a.current&&\n    8  (a.current.loop||a.current.index<a.group.length-1))a.player.isActive=!0,e(),d(\"body\").bind({\"onCancel.player afterShow.player onUpdate.player\":e,\"beforeClose.player\":g,\"beforeLoad.player\":c}),a.trigger(\"onPlayStart\")},next:function(){a.current&&a.jumpto(a.current.index+1)},prev:function(){a.current&&a.jumpto(a.current.index-1)},jumpto:function(b){a.current&&(b=parseInt(b,10),1<a.group.length&&a.current.loop&&(b>=a.group.length?b=0:0>b&&(b=a.group.length-1)),\"undefined\"!==typeof a.group[b]&&(a.cancel(),\n    9  a._start(b)))},reposition:function(b){a.isOpen&&a.wrap.css(a._getPosition(b))},update:function(){a.isOpen&&(p||(q=setInterval(function(){if(p&&(p=!1,clearTimeout(q),a.current)){if(a.current.autoSize)a.inner.height(\"auto\"),a.current.height=a.inner.height();a._setDimension();a.current.canGrow&&a.inner.height(\"auto\");a.reposition();a.trigger(\"onUpdate\")}},100)),p=!0)},toggle:function(){if(a.isOpen)a.current.fitToView=!a.current.fitToView,a.update()},hideLoading:function(){d(\"#fancybox-loading\").remove()},\n   ..\n   14  g=f.type;b=f.href;if(!g)e&&(h=d(c).data(\"fancybox-type\"),!h&&c.className&&(h=(h=c.className.match(/fancybox\\.(\\w+)/))?h[1]:!1)),h?g=h:b&&(a.isImage(b)?g=\"image\":a.isSWF(b)?g=\"swf\":b.match(/^#/)&&(g=\"inline\")),g||(g=e?\"inline\":\"html\"),f.type=g;if(\"inline\"===g||\"html\"===g){if(!f.content)f.content=\"inline\"===g&&b?d(b):c;f.content.length||(g=null)}else f.href=b||c,f.href||(g=null);f.group=a.group;\"image\"===g?a._loadImage():\"ajax\"===g?a._loadAjax():g?a._afterLoad():a._error()}},_error:function(){a.coming.type=\n   15  \"html\";a.coming.minHeight=0;a.coming.autoSize=!0;a.coming.content=a.coming.tpl.error;a._afterLoad()},_loadImage:function(){a.imgPreload=new Image;a.imgPreload.onload=function(){this.onload=this.onerror=null;a.coming.width=this.width;a.coming.height=this.height;a._afterLoad()};a.imgPreload.onerror=function(){this.onload=this.onerror=null;a._error()};a.imgPreload.src=a.coming.href;a.imgPreload.complete||a.showLoading()},_loadAjax:function(){a.showLoading();a.ajaxLoad=d.ajax(d.extend({},a.coming.ajax,\n   16: {url:a.coming.href,error:function(b,c,e){\"abort\"!==c?(a.coming.content=e,a._error()):a.hideLoading()},success:function(b,c){if(\"success\"===c)a.coming.content=b,a._afterLoad()}}))},_afterLoad:function(){a.hideLoading();!a.coming||!1===a.trigger(\"afterLoad\",a.current)?a.coming=!1:(a.isOpened?(d(\".fancybox-item\").remove(),a.wrap.stop(!0).removeClass(\"fancybox-opened\"),a.inner.css(\"overflow\",\"hidden\"),a.transitions[a.current.prevMethod]()):(d(\".fancybox-wrap\").stop().trigger(\"onReset\").remove(),a.trigger(\"afterClose\")),\n   17  a.unbindEvents(),a.isOpen=!1,a.current=a.coming,a.coming=!1,a.wrap=d(a.current.tpl.wrap).addClass(\"fancybox-tmp \"+a.current.wrapCSS).appendTo(\"body\"),a.outer=d(\".fancybox-outer\",a.wrap).css(\"padding\",a.current.padding+\"px\"),a.inner=d(\".fancybox-inner\",a.wrap),a._setContent(),a.trigger(\"beforeShow\"),a._setDimension(),a.wrap.hide().removeClass(\"fancybox-tmp\"),a.bindEvents(),a.transitions[a.isOpened?a.current.nextMethod:a.current.openMethod]())},_setContent:function(){var b,c,e=a.current,g=e.type;switch(g){case \"inline\":case \"ajax\":case \"html\":\"inline\"===\n   18  g?(b=e.content.show().detach(),b.parent().hasClass(\"fancybox-inner\")&&b.parents(\".fancybox-wrap\").trigger(\"onReset\").remove(),d(a.wrap).bind(\"onReset\",function(){b.appendTo(\"body\").hide()})):b=e.content;if(e.autoSize)c=d('<div class=\"fancybox-tmp\"></div>').appendTo(d(\"body\")).append(b),e.width=c.outerWidth(),e.height=c.outerHeight(!0),b=c.contents().detach(),c.remove();break;case \"image\":b=e.tpl.image.replace(\"{href}\",e.href);e.aspectRatio=!0;break;case \"swf\":b=e.tpl.swf.replace(/\\{width\\}/g,e.width).replace(/\\{height\\}/g,\n   ..\n   20  (h=c.w*parseFloat(h)/100);-1<f.toString().indexOf(\"%\")&&(f=c.h*parseFloat(f)/100);b.fitToView&&(j=Math.min(c.w,j),k=Math.min(c.h,k));j=Math.max(i,j);k=Math.max(l,k);b.aspectRatio?(h>j&&(h=j,f=(h-g)/m+g),f>k&&(f=k,h=(f-g)*m+g),h<i&&(h=i,f=(h-g)/m+g),f<l&&(f=l,h=(f-g)*m+g)):(h=Math.max(i,Math.min(h,j)),f=Math.max(l,Math.min(f,k)));h=Math.round(h);f=Math.round(f);d(a.wrap.add(a.outer).add(a.inner)).width(\"auto\").height(\"auto\");a.inner.width(h-g).height(f-g);a.wrap.width(h);e=a.wrap.height();if(h>j||\n   21  e>k)for(;(h>j||e>k)&&h>i&&e>l;)f-=10,b.aspectRatio?(h=Math.round((f-g)*m+g),h<i&&(h=i,f=(h-g)/m+g)):h-=10,a.inner.width(h-g).height(f-g),a.wrap.width(h),e=a.wrap.height();b.dim={width:h,height:e};b.canGrow=b.autoSize&&f>l&&f<k;b.canShrink=!1;b.canExpand=!1;if(h-g<b.width||f-g<b.height)b.canExpand=!0;else if((h>c.w||e>c.h)&&h>i&&f>l)b.canShrink=!0;b=e-g;a.innerSpace=b-a.inner.height();a.outerSpace=b-a.outer.height()},_getPosition:function(b){var c=a.getViewport(),e=a.current.margin,d=a.wrap.width()+\n   22: e[1]+e[3],h=a.wrap.height()+e[0]+e[2],f={position:\"absolute\",top:e[0]+c.y,left:e[3]+c.x};if(a.current.fixed&&(!b||!1===b[0])&&h<=c.h&&d<=c.w)f={position:\"fixed\",top:e[0],left:e[3]};f.top=Math.ceil(Math.max(f.top,f.top+(c.h-h)*a.current.topRatio))+\"px\";f.left=Math.ceil(Math.max(f.left,f.left+0.5*(c.w-d)))+\"px\";return f},_afterZoomIn:function(){var b=a.current;a.isOpen=a.isOpened=!0;a.wrap.addClass(\"fancybox-opened\").css(\"overflow\",\"visible\");a.update();a.inner.css(\"overflow\",\"auto\"===b.scrolling?\"auto\":\n   23  \"yes\"===b.scrolling?\"scroll\":\"hidden\");if(b.closeClick||b.nextClick)a.inner.bind(\"click.fb\",b.nextClick?a.next:a.close);b.closeBtn&&d(a.current.tpl.closeBtn).appendTo(a.wrap).bind(\"click.fb\",a.close);b.arrows&&1<a.group.length&&((b.loop||0<b.index)&&d(b.tpl.prev).appendTo(a.wrap).bind(\"click.fb\",a.prev),(b.loop||b.index<a.group.length-1)&&d(b.tpl.next).appendTo(a.wrap).bind(\"click.fb\",a.next));a.trigger(\"afterShow\");if(a.opts.autoPlay&&!a.player.isActive)a.opts.autoPlay=!1,a.play()},_afterZoomOut:function(){a.trigger(\"afterClose\");\n   24  a.wrap.trigger(\"onReset\").remove();d.extend(a,{group:{},opts:{},current:null,isOpened:!1,isOpen:!1,wrap:null,outer:null,inner:null})}});a.transitions={getOrigPosition:function(){var b=a.current.element,c={},e=50,g=50,h;b&&b.nodeName&&d(b).is(\":visible\")?(h=d(b).find(\"img:first\"),h.length?(c=h.offset(),e=h.outerWidth(),g=h.outerHeight()):c=d(b).offset()):(b=a.getViewport(),c.top=b.y+0.5*(b.h-g),c.left=b.x+0.5*(b.w-e));return c={top:Math.ceil(c.top)+\"px\",left:Math.ceil(c.left)+\"px\",width:Math.ceil(e)+\n\nD:\\web\\yesman\\app\\libs\\fancybox\\css\\jquery.fancybox-thumbs.css:\n    4  	left: 0px;\n    5  	width: 100%;\n    6: 	overflow: hidden;\n    7  	z-index: 1005;\n    8  }\n    .\n   34  	display: block;\n   35  	position: relative;\n   36: 	overflow: hidden;\n   37  	border: 1px solid #222;\n   38  	background: #111;\n\nD:\\web\\yesman\\app\\libs\\fancybox\\css\\jquery.fancybox.css:\n   41  	position: relative;\n   42  	outline: none;\n   43: 	overflow: hidden;\n   44  }\n   45  \n   ..\n  149  	left: -9999px;\n  150  	padding: 0;\n  151: 	overflow: visible;\n  152  	visibility: hidden;\n  153  }\n  ...\n  159  	top: 0;\n  160  	left: 0;\n  161: 	overflow: hidden;\n  162  	display: none;\n  163  	z-index: 1001;\n\nD:\\web\\yesman\\app\\libs\\fancybox\\js\\jquery.fancybox.js:\n  222  \n  223  				F.wrap.stop(true).removeClass('fancybox-opened');\n  224: 				F.inner.css('overflow', 'hidden');\n  225  \n  226  				F.transitions[F.current.closeMethod]();\n  ...\n  667  \n  668  				F.wrap.stop(true).removeClass('fancybox-opened');\n  669: 				F.inner.css('overflow', 'hidden');\n  670  \n  671  				F.transitions[F.current.prevMethod]();\n  ...\n  910  			F.isOpen = F.isOpened = true;\n  911  \n  912: 			F.wrap.addClass('fancybox-opened').css('overflow', 'visible');\n  913  \n  914  			F.update();\n  915  \n  916: 			F.inner.css('overflow', current.scrolling === 'auto' ? 'auto' : (current.scrolling === 'yes' ? 'scroll' : 'hidden'));\n  917  \n  918  			//Assign a click event\n\nD:\\web\\yesman\\app\\scripts\\app-view.coffee:\n   20      $(e.currentTarget).addClass('active')\n   21    closeGallery: ->\n   22:     $('body').css('overflow', 'auto')\n   23    openThumbImg: (e)->\n   24      $.fancybox.jumpto($(e.currentTarget).attr('data-id'))\n\nD:\\web\\yesman\\app\\scripts\\collection-gallery.coffee:\n   20      'click .work' : 'openWork'\n   21    openWork: ->\n   22:     $('body').css('overflow', 'hidden')\n   23  )\n   24  \n\nD:\\web\\yesman\\app\\scripts\\fancybox\\jquery.fancybox.js:\n  223  \n  224  				F.wrap.stop(true).removeClass('fancybox-opened');\n  225: 				F.inner.css('overflow', 'hidden');\n  226  \n  227  				F.transitions[F.current.closeMethod]();\n  ...\n  668  \n  669  				F.wrap.stop(true).removeClass('fancybox-opened');\n  670: 				F.inner.css('overflow', 'hidden');\n  671  \n  672  				F.transitions[F.current.prevMethod]();\n  ...\n  911  			F.isOpen = F.isOpened = true;\n  912  \n  913: 			F.wrap.addClass('fancybox-opened').css('overflow', 'visible');\n  914  \n  915  			F.update();\n  916  \n  917: 			F.inner.css('overflow', current.scrolling === 'auto' ? 'auto' : (current.scrolling === 'yes' ? 'scroll' : 'hidden'));\n  918  \n  919  			//Assign a click event\n\nD:\\web\\yesman\\app\\scripts\\jquery-mousewheel\\test\\index.html:\n   85  				width: 460px;\n   86  				height: 290px;\n   87: 				overflow: auto;\n   88  			}\n   89  			\n\nD:\\web\\yesman\\app\\styles\\normalize.css:\n  188  \n  189  /**\n  190:  * Correct overflow not hidden in IE 9/10/11.\n  191   */\n  192  \n  193  svg:not(:root) {\n  194:   overflow: hidden;\n  195  }\n  196  \n  ...\n  216  \n  217  /**\n  218:  * Contain overflow in all browsers.\n  219   */\n  220  \n  221  pre {\n  222:   overflow: auto;\n  223  }\n  224  \n  ...\n  261  \n  262  /**\n  263:  * Address `overflow` set to `hidden` in IE 8/9/10/11.\n  264   */\n  265  \n  266  button {\n  267:   overflow: visible;\n  268  }\n  269  \n  ...\n  395  \n  396  textarea {\n  397:   overflow: auto;\n  398  }\n  399  \n\n43 matches across 12 files\n",
+			"settings":
+			{
+				"buffer_size": 13456,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
 			"file": "content/content.jade",
 			"settings":
 			{
@@ -446,13 +456,14 @@
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 102.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -460,6 +471,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"overflow",
 			"'))\n",
 			"hover",
 			"45px",
@@ -490,7 +502,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -520,7 +532,7 @@
 						"translation.y": 462.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -550,7 +562,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -566,8 +578,8 @@
 						"selection":
 						[
 							[
-								508,
-								508
+								597,
+								601
 							]
 						],
 						"settings":
@@ -577,14 +589,229 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 264.0,
+						"translation.y": 132.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13456,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										177,
+										185
+									],
+									[
+										410,
+										418
+									],
+									[
+										443,
+										451
+									],
+									[
+										470,
+										478
+									],
+									[
+										499,
+										507
+									],
+									[
+										644,
+										652
+									],
+									[
+										889,
+										897
+									],
+									[
+										1122,
+										1130
+									],
+									[
+										1155,
+										1163
+									],
+									[
+										1182,
+										1190
+									],
+									[
+										1211,
+										1219
+									],
+									[
+										1356,
+										1364
+									],
+									[
+										1587,
+										1595
+									],
+									[
+										1767,
+										1775
+									],
+									[
+										1951,
+										1959
+									],
+									[
+										2035,
+										2043
+									],
+									[
+										3406,
+										3414
+									],
+									[
+										6237,
+										6245
+									],
+									[
+										8937,
+										8945
+									],
+									[
+										8982,
+										8990
+									],
+									[
+										10191,
+										10199
+									],
+									[
+										10307,
+										10315
+									],
+									[
+										10500,
+										10508
+									],
+									[
+										10592,
+										10600
+									],
+									[
+										10695,
+										10703
+									],
+									[
+										10908,
+										10916
+									],
+									[
+										11088,
+										11096
+									],
+									[
+										11272,
+										11280
+									],
+									[
+										11356,
+										11364
+									],
+									[
+										11647,
+										11655
+									],
+									[
+										11900,
+										11908
+									],
+									[
+										12087,
+										12095
+									],
+									[
+										12267,
+										12275
+									],
+									[
+										12451,
+										12459
+									],
+									[
+										12535,
+										12543
+									],
+									[
+										12805,
+										12813
+									],
+									[
+										12922,
+										12930
+									],
+									[
+										13009,
+										13017
+									],
+									[
+										13087,
+										13095
+									],
+									[
+										13154,
+										13162
+									],
+									[
+										13231,
+										13239
+									],
+									[
+										13318,
+										13326
+									],
+									[
+										13395,
+										13403
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4884.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "content/content.jade",
 					"semi_transient": false,
 					"settings":
@@ -610,11 +837,11 @@
 						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "main.coffee",
 					"semi_transient": false,
 					"settings":
@@ -640,11 +867,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "scripts/app-view.coffee",
 					"semi_transient": false,
 					"settings":
@@ -656,8 +883,8 @@
 						"selection":
 						[
 							[
-								611,
-								693
+								493,
+								493
 							]
 						],
 						"settings":
@@ -674,7 +901,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "scripts/templates/galleryTemplate.jade",
 					"semi_transient": false,
 					"settings":
@@ -698,11 +925,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "scripts/collection-gallery.coffee",
 					"semi_transient": false,
 					"settings":
@@ -728,11 +955,11 @@
 						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "header/header.styl",
 					"semi_transient": false,
 					"settings":
@@ -758,11 +985,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "scripts/collection-homes.coffee",
 					"semi_transient": false,
 					"settings":
@@ -788,11 +1015,11 @@
 						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "scripts/collection-baths.coffee",
 					"semi_transient": false,
 					"settings":
@@ -804,8 +1031,8 @@
 						"selection":
 						[
 							[
-								1028,
-								1028
+								690,
+								690
 							]
 						],
 						"settings":
@@ -815,14 +1042,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 462.0,
+						"translation.y": 264.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "scripts/templates/homeTemplate.jade",
 					"semi_transient": false,
 					"settings":
@@ -846,7 +1073,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 12,
 					"type": "text"
 				}
 			]

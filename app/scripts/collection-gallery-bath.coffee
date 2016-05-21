@@ -2,9 +2,9 @@ galleryTemplate = require('./templates/galleryTemplate.jade')()
 
 PictureModel = Backbone.Model.extend(
   defaults:
-    name: 'name'
     picture: 'picture path'
     id: 'picture id'
+    gallery: 'thumb-bath'
 )
 
 GalleryCollection = Backbone.Collection.extend(
@@ -23,25 +23,19 @@ GalleryView = Backbone.Epoxy.View.extend(
 )
 
 AppGallery = Backbone.Epoxy.View.extend(
-  el:'#tabs-gallery'
+  el:'.gallery-bath-collection'
   collection: galleryCol
   itemView: GalleryView
   initialize: -> # title // picture // id
-    this.add('фото 1', 'gal1')
-    this.add('фото 2', 'gal2')
-    this.add('фото 3', 'gal3')
-    this.add('фото 4', 'gal4')
-    this.add('фото 5', 'gal5')
-    this.add('фото 6', 'gal6')
-    this.add('фото 7', 'gal7')
-    this.add('фото 8', 'gal8')
-    this.add('фото 9', 'gal9')
-    this.add('фото 10', 'gal10')
-    this.add('фото 11', 'gal11')
-  add: (nameH, pictureH)->
-    pictureH = '../img/gallery/' + pictureH + '.jpg'
+    this.add('gal1')
+    this.add('gal2')
+    this.add('gal3')
+    this.add('gal4')
+    this.add('gal5')
+  add: (pictureH)->
+    pictureH = '../img/gallery/bath/' + pictureH + '.jpg'
     idH = this.collection.length + 1
-    this.collection.add({name: nameH, picture: pictureH, id: idH})
+    this.collection.add({picture: pictureH, id: idH})
 )
 
 appgallery = new AppGallery

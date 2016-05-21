@@ -12,22 +12,36 @@ content = require('./content/content')
 $('.content .plane').append(content)
 $( "#tabs" ).tabs()
 
+$(document).keydown( 
+  (e)->
+    if e.keyCode==27 and $('#fancybox-overlay') != null
+      $('body').css('overflow', 'auto')
+)
+
 appView = require('./scripts/app-view')
 require('./scripts/collection-homes')
 require('./scripts/collection-baths')
-require('./scripts/collection-gallery')
-$('.fancybox-thumb').fancybox(
+require('./scripts/collection-gallery-bath')
+require('./scripts/collection-gallery-home')
+
+addGallery = (gallClass) ->
+  $(gallClass).fancybox(
   openEffect: 'none'
   closeEffect: 'none'
   prevEffect: 'none'
   nextEffect: 'none'
   href: 'index.html'
   helpers:
-    title: {type: 'outside'}
+    title: null
     thumbs: 
       width: 70 
-      height: 70
-                    
-)
+      height: 70         
+  )
+
+openThumb = ->
+  addGallery('.thumb-bath')
+  addGallery('.thumb-home')
+
+$(document).ready(openThumb)
 
 

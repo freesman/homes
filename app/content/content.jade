@@ -27,7 +27,11 @@ hr.line
       img(src='content/img/home.jpg' height='350px' width='470px')
   #tabs-homes(data-bind = 'collection:$collection')
   #tabs-baths(data-bind = 'collection:$collection')
-  #tabs-gallery(data-bind = 'collection:$collection')
+  #tabs-gallery
+    .gallery-name Галлерея баньки
+    .gallery-bath-collection(data-bind = 'collection:$collection')
+    .gallery-name Галлерея домика
+    .gallery-home-collection(data-bind = 'collection:$collection')
   #tabs-another
     ul
       li заборы
@@ -35,7 +39,7 @@ hr.line
       li окна
       li отделка
   #tabs-single
-    .project проект ева
+    .project
     img.singleImg(src='content/img/home-3d.png' height='460px' width='500px')
     .singleGallery(data-id = '')
       img.image(src='content/img/home-3d.png' height='150px' width='150px')
