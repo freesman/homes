@@ -28,23 +28,31 @@ hr.line
   #tabs-homes(data-bind = 'collection:$collection')
   #tabs-baths(data-bind = 'collection:$collection')
   #tabs-gallery
-    .gallery-name Галлерея баньки
+    .gallery-name Баня 5х4
     .gallery-bath-collection(data-bind = 'collection:$collection')
-    .gallery-name Галлерея домика
+    .gallery-name Дом 10х12
     .gallery-home-collection(data-bind = 'collection:$collection')
   #tabs-another
-    ul
-      li заборы
-      li двери
-      li окна
-      li отделка
+    .another-title Подробности по телефону 8 904 026 04 43
+    .another-block
+      .another-element
+        .another-text Монтаж заборов
+        img(src='content/img/another/zabor.jpg' width='250px' height='250px')
+      .another-element.__no-margin
+        .another-text Монтаж дверей
+        img(src='content/img/another/door.jpg' width='250px' height='250px')
+      .another-element
+        .another-text Отделка дома
+        img(src='content/img/another/otdelka.jpg' width='250px' height='250px')
+      .another-element.__no-margin
+        .another-text Монтаж окон
+        img(src='content/img/another/window.jpg' width='250px' height='250px')
   #tabs-single
     .project
-    img.singleImg(src='content/img/home-3d.png' height='460px' width='500px')
+    .price
+    img.singleImg(src='content/img/home-3d.png' height='460px' width='460px')
     .singleGallery(data-id = '')
       img.image(src='content/img/home-3d.png' height='150px' width='150px')
       img.planeFirst(src='content/img/home-1p.png' height='150px' width='150px')
       img.planeSecond(src='content/img/home-2p.png' height='150px' width='150px')
     .butClose
-    .price цена 500 $
-    .description 5кв бревно 150 бла бла

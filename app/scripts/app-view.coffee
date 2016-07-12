@@ -1,12 +1,16 @@
 AppView = Backbone.View.extend(
   el: 'body'
   events:
+    'click .fancybox-prev' : 'clearSelection'
+    'click .fancybox-next' : 'clearSelection'
     'click .butClose' : 'closer'
     'click .image' : 'singleGallery'
     'click .planeFirst' : 'singleGallery'
     'click .planeSecond' : 'singleGallery'
     'click #fancybox-overlay' : 'closeGallery'
     'click #fancybox-thumbs a' : 'openThumbImg'
+  clearSelection: ->
+    if(window.getSelection) then window.getSelection().removeAllRanges()
   closer: ->
     switcher = $('.singleGallery').attr('data-id')
     if switcher == 'home' then $( "#tabs" ).tabs({active: 1})

@@ -7,6 +7,7 @@ HomesModel = Backbone.Model.extend(
     picture: 'picture path'
     price: 'project price'
     model: 'model name'
+    secondFloor: false
 )
 
 HomesCollection = Backbone.Collection.extend(
@@ -23,12 +24,15 @@ HomeView = Backbone.Epoxy.View.extend(
   openHome: ->
     homepath = 'content/img/homesGallery/' + this.model.get('model')
     $('.singleGallery').attr('data-id', 'home')
-    $('.singleImg').attr('src', homepath + '/home-3d.png')
-    $('.image').attr('src', homepath + '/home-3d.png')
-    $('.planeFirst').attr('src', homepath + '/home-1p.png')
-    $('.planeSecond').attr('src', homepath + '/home-2p.png')
+    $('.singleImg').attr('src', homepath + '/home-3d.jpg')
+    $('.image').attr('src', homepath + '/home-3d.jpg')
+    $('.planeFirst').attr('src', homepath + '/home-1p.jpg')
+    if this.model.get('secondFloor')
+      $('.planeSecond').css('display', 'block')
+      $('.planeSecond').attr('src', homepath + '/home-2p.jpg')
+    else $('.planeSecond').css('display', 'none')
     $('.project').text('проект ' + this.model.get('name'))
-    $('.price').text('цена ' + this.model.get('price'))
+    $('.price').text(this.model.get('price'))
     $('.planeFirst').removeClass('active')
     $('.planeSecond').removeClass('active')
     $('.image').addClass('active')
@@ -39,17 +43,17 @@ AppHome = Backbone.Epoxy.View.extend(
   el:'#tabs-homes'
   collection: homesCol
   itemView: HomeView
-  initialize: -> # title // picture // price // model name
-    this.add('руслан', 'ruslan', '50 000', 'ruslan')
-    this.add('петр', 'petr', '59 000', 'petr')
-    this.add('демьян', 'demyan', '78 000', 'demyan')
-    this.add('илья', 'ilya', '43 000', 'ilya')
-    this.add('владимир', 'vladimir', '63 000', 'vladimir')
-    this.add('яромир', 'yaromir', '47 000', 'yaromir')
-  add: (nameH, pictureH, priceH, modelH)->
-    pictureH = '../img/homes/' + pictureH + '.png'
+  initialize: -> # title // picture // price // model name// 2nd floor
+    this.add('руслан', 'ruslan', '50 000', 'ruslan', true)
+    this.add('петр', 'petr', '59 000', 'petr', true)
+    this.add('демьян', 'demyan', '78 000', 'demyan', true)
+    this.add('илья', 'ilya', '43 000', 'ilya', true)
+    this.add('владимир', 'vladimir', '63 000', 'vladimir', true)
+    this.add('яромир', 'yaromir', '47 000', 'yaromir', true)
+  add: (nameH, pictureH, priceH, modelH, scndFlr)->
+    pictureH = '../img/homes/' + pictureH + '.jpg'
     priceH = priceH + ' руб.'
-    this.collection.add({name: nameH, picture: pictureH, price: priceH, model: modelH})
+    this.collection.add({name: nameH, picture: pictureH, price: priceH, model: modelH, secondFloor: scndFlr})
 )
 
 appHome = new AppHome

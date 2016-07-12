@@ -7,6 +7,7 @@ BathsModel = Backbone.Model.extend(
     picture: 'picture path'
     price: 'project price'
     model: 'model name'
+    secondFloor: false
 )
 
 BathsCollection = Backbone.Collection.extend(
@@ -23,12 +24,15 @@ BathView = Backbone.Epoxy.View.extend(
   openBath: ->
     bathpath = 'content/img/bathsGallery/' + this.model.get('model')
     $('.singleGallery').attr('data-id', 'bath')
-    $('.singleImg').attr('src', bathpath + '/bath-3d.png')
-    $('.image').attr('src', bathpath + '/bath-3d.png')
-    $('.planeFirst').attr('src', bathpath + '/bath-1p.png')
-    $('.planeSecond').attr('src', bathpath + '/bath-2p.png')
+    $('.singleImg').attr('src', bathpath + '/bath-3d.jpg')
+    $('.image').attr('src', bathpath + '/bath-3d.jpg')
+    $('.planeFirst').attr('src', bathpath + '/bath-1p.jpg')
+    if this.model.get('secondFloor')
+      $('.planeSecond').css('display', 'block')
+      $('.planeSecond').attr('src', bathpath + '/bath-2p.jpg')
+    else $('.planeSecond').css('display', 'none')
     $('.project').text('проект ' + this.model.get('name'))
-    $('.price').text('цена ' + this.model.get('price'))
+    $('.price').text(this.model.get('price'))
     $('.planeFirst').removeClass('active')
     $('.planeSecond').removeClass('active')
     $('.image').addClass('active')
@@ -40,16 +44,16 @@ AppBath = Backbone.Epoxy.View.extend(
   collection: bathsCol
   itemView: BathView
   initialize: -> # title // picture // price // model name
-    this.add('алена', 'alena', '20 000', 'alena')
-    this.add('анна', 'anna', '23 000', 'anna')
-    this.add('екатерина', 'ekaterina', '17 000', 'ekaterina')
-    this.add('елена', 'elena', '15 000', 'elena')
-    this.add('ирина', 'irina', '19 000', 'irina')
-    this.add('наталья', 'natalya', '30 000', 'natalya')
-  add: (nameH, pictureH, priceH, modelH)->
-    pictureH = '../img/baths/' + pictureH + '.png'
+    this.add('алена', 'alena', '20 000', 'alena', false)
+    this.add('анна', 'anna', '23 000', 'anna', false)
+    this.add('екатерина', 'ekaterina', '17 000', 'ekaterina', false)
+    this.add('елена', 'elena', '15 000', 'elena', false)
+    this.add('ирина', 'irina', '19 000', 'irina', false)
+    this.add('наталья', 'natalya', '30 000', 'natalya', false)
+  add: (nameH, pictureH, priceH, modelH, scndFlr)->
+    pictureH = '../img/baths/' + pictureH + '.jpg'
     priceH = priceH + ' руб.'
-    this.collection.add({name: nameH, picture: pictureH, price: priceH, model: modelH})
+    this.collection.add({name: nameH, picture: pictureH, price: priceH, model: modelH, secondFloor: scndFlr})
 )
 
 appBath = new AppBath

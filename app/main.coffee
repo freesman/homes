@@ -26,16 +26,17 @@ require('./scripts/collection-gallery-home')
 
 addGallery = (gallClass) ->
   $(gallClass).fancybox(
-  openEffect: 'none'
-  closeEffect: 'none'
-  prevEffect: 'none'
-  nextEffect: 'none'
-  href: 'index.html'
-  helpers:
-    title: null
-    thumbs: 
-      width: 70 
-      height: 70         
+    openEffect: 'none'
+    closeEffect: 'none'
+    prevEffect: 'none'
+    nextEffect: 'none'
+    href: 'index.html'
+    afterClose: -> $('body').css('overflow', 'auto')
+    helpers:
+      title: null
+      thumbs: 
+        width: 70 
+        height: 70         
   )
 
 openThumb = ->
