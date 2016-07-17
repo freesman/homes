@@ -346,10 +346,7 @@
 	"expanded_folders":
 	[
 		"/D/web/yesman/app",
-		"/D/web/yesman/app/content/img",
 		"/D/web/yesman/app/header",
-		"/D/web/yesman/app/libs/fancybox",
-		"/D/web/yesman/app/libs/fancybox/js",
 		"/D/web/yesman/app/scripts",
 		"/D/web/yesman/app/scripts/fancybox",
 		"/D/web/yesman/app/scripts/templates"
@@ -445,7 +442,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 30.0
 	},
 	"find_in_files":
 	{
@@ -569,8 +566,8 @@
 						"selection":
 						[
 							[
-								940,
-								940
+								1084,
+								1084
 							]
 						],
 						"settings":
@@ -608,7 +605,7 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 1368.0,
 						"zoom_level": 1.0
 					},
@@ -669,7 +666,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 264.0,
+						"translation.y": 132.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -857,12 +854,12 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
