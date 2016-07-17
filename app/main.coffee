@@ -6,10 +6,8 @@ fancybox = require('./scripts/fancybox/jquery.fancybox')
 require('./scripts/fancybox/jquery.fancybox-thumbs')
 
 header = require('./header/header')
-$('header').append(header)
 
 content = require('./content/content')
-$('.content .plane').append(content)
 $( "#tabs" ).tabs()
 
 $(document).keydown( 
