@@ -25,6 +25,8 @@ AppView = Backbone.View.extend(
   closeGallery: ->
     $('body').css('overflow', 'auto')
   openThumbImg: (e)->
+    console.log('err?')
+    console.log($(e.currentTarget).attr('data-id'))
     $.fancybox.jumpto($(e.currentTarget).attr('data-id'))
 )
 

@@ -1,29 +1,36 @@
 {
   "name": "yesman-pack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "my own webpack for easy projects",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot",
+    "prod": "mode=production webpack"
+  },
   "dependencies": {
-    "webpack": "*"
+    "jquery": "^3.1.0",
+    "backbone": "^1.3.3",
+    "backbone.epoxy": "^1.3.4"
   },
   "devDependencies": {
-    "webpack": "*",
-    "gulp": "*",
-    "gulp-gh-pages": "*",
-    "jade": "*",
-    "jade-loader": "*",
-    "coffee-script": "*",
-    "coffee-loader": "*",
-    "style-loader": "*",
-    "css-loader": "*",
-    "stylus-loader": "*",
-    "autoprefixer-loader": "*",
-    "file-loader": "*",
-    "url-loader": "*",
-    "extract-text-webpack-plugin": "*",
-    "html-webpack-plugin": "*"
-
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "imports-loader": "^0.6.5",
+    "copy-webpack-plugin": "^3.0.0",
+    "clean-webpack-plugin": "^0.1.10",
+    "coffee-script": "^1.10.0",
+    "coffee-loader": "^0.7.2",
+    "html-webpack-plugin": "^2.22.0",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.1.2",
+    "autoprefixer-loader": "^3.2.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "url-loader": "^0.5.7"
   },
-  
   "author": "freesman <freesmanfreezil@gmail.com> (https://github.com/freesman)",
-  "license": "no license"
+  "license": "UNLICENSED"
 }

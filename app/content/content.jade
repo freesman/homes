@@ -1,5 +1,6 @@
-hr.line
-.hidetabs
+//- .content
+hr.content--line
+.content--hidetabs
 #tabs
   ul
     li(id='firstTab')
@@ -12,11 +13,11 @@ hr.line
       a(href="#tabs-gallery", id='tab-gallery') Портфолио
     li
       a(href="#tabs-another" ,id='tab-another') Другое
-    li.hideLi
+    li.hidden
       a(href="#tabs-single") 3D
 
   #tabs-main
-    .main
+    .content--main
       h2 Мы занимаемся строительством домов из профилированного бруса.
       ul
         li проектирование будущего сооружения
@@ -24,35 +25,35 @@ hr.line
         li возведение силовой части здания
         li кровельные работы
         li отделка
-      img(src='content/img/home.jpg' height='350px' width='470px')
+      img(src='img/content/home.jpg' height='350px' width='470px')
   #tabs-homes(data-bind = 'collection:$collection')
   #tabs-baths(data-bind = 'collection:$collection')
   #tabs-gallery
-    .gallery-name Баня 5х4
-    .gallery-bath-collection(data-bind = 'collection:$collection')
-    .gallery-name Дом 10х12
-    .gallery-home-collection(data-bind = 'collection:$collection')
+    .content--gallery-title Баня 5х4
+    .content--gallery-bath(data-bind = 'collection:$collection')
+    .content--gallery-title Дом 10х12
+    .content--gallery-home(data-bind = 'collection:$collection')
   #tabs-another
-    .another-title Подробности по телефону 8 904 026 04 43
-    .another-block
-      .another-element
-        .another-text Монтаж заборов
-        img(src='content/img/another/zabor.jpg' width='250px' height='250px')
-      .another-element.__no-margin
-        .another-text Монтаж дверей
-        img(src='content/img/another/door.jpg' width='250px' height='250px')
-      .another-element
-        .another-text Отделка дома
-        img(src='content/img/another/otdelka.jpg' width='250px' height='250px')
-      .another-element.__no-margin
-        .another-text Монтаж окон
-        img(src='content/img/another/window.jpg' width='250px' height='250px')
+    .content--another-title Подробности по телефону 8 904 026 04 43
+    .content--another-block
+      .content--another-element
+        .content--another-text Монтаж заборов
+        img(src='img/another/zabor.jpg' width='250px' height='250px')
+      .content--another-element.__no-margin
+        .content--another-text Монтаж дверей
+        img(src='img/another/door.jpg' width='250px' height='250px')
+      .content--another-element
+        .content--another-text Отделка дома
+        img(src='img/another/otdelka.jpg' width='250px' height='250px')
+      .content--another-element.__no-margin
+        .content--another-text Монтаж окон
+        img(src='img/another/window.jpg' width='250px' height='250px')
   #tabs-single
-    .project
-    .price
-    img.singleImg(src='content/img/home-3d.png' height='460px' width='460px')
-    .singleGallery(data-id = '')
-      img.image(src='content/img/home-3d.png' height='150px' width='150px')
-      img.planeFirst(src='content/img/home-1p.png' height='150px' width='150px')
-      img.planeSecond(src='content/img/home-2p.png' height='150px' width='150px')
-    .butClose
+    .content--project
+    .content--price
+    img.content--singleImg(src='content/img/home-3d.png' height='460px' width='460px')
+    .content--singleGallery(data-id = '')
+      img.content--image(src='content/img/home-3d.png' height='150px' width='150px')
+      img.content--planeFirst(src='content/img/home-1p.png' height='150px' width='150px')
+      img.content--planeSecond(src='content/img/home-2p.png' height='150px' width='150px')
+    .content--butClose

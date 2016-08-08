@@ -1,13 +1,14 @@
+require('./main.styl')
+require('./header/header')
+require('./content/content')
+
 Backbone = require('backbone')
 Epoxy = require('backbone.epoxy')
-tabs = require('./tabs')
+tabs = require('./scripts/tabs')
 require('./scripts/jquery-mousewheel/jquery.mousewheel')
 fancybox = require('./scripts/fancybox/jquery.fancybox')
 require('./scripts/fancybox/jquery.fancybox-thumbs')
 
-header = require('./header/header')
-
-content = require('./content/content')
 $( "#tabs" ).tabs()
 
 $(document).keydown( 

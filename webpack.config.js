@@ -1,12 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-//var rimraf = require('rimraf');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var mode = process.env.mode || 'development';
 
 function addHash(template, hash){
-  return mode != 'development' ?
+  return mode == 'production' ?
     template.replace(/\.[^.]+$/, `.[${hash}]$&`) : template;
 }
 
@@ -23,7 +24,7 @@ module.exports = {
   output: {
     path: mode == 'development' ? path.join(__dirname, 'dist') : path.join(__dirname, 'public'),
     //publicPath: '/dist/',
-  	filename: addHash('[name].js', 'chunkhash:6'),
+    filename: addHash('[name].js', 'chunkhash:6'),
     library: '[name]',
     chunkFilename: addHash('[id].[name].js', 'chunkhash:6')
   },
@@ -31,14 +32,14 @@ module.exports = {
   module:{
     loaders: [
       {test: /\.coffee$/, loader: 'coffee'},
-      {test: /\.jade$/, loader: 'jade'},
+      {test: /\.jade$/, loader: mode == 'development' ? 'jade?pretty=true' : 'jade'},
       {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css!autoprefixer?browsers=last 2 versions')},
       {test: /\.styl$/, loader: ExtractTextPlugin.extract('style', 'css!autoprefixer?browsers=last 2 versions!stylus?resolve url')},
-      {test: /\.(png|jpg|svg|ttf)$/, loader: addHash('url?name=[path][name].[ext]&limit=4096', 'hash:6')}
+      {test: /\.(png|jpg|svg|ttf)$/, loader: addHash('url?name=[path][name].[ext]&limit=4096', 'hash:6')},
     ]
   },
 
-  watch: mode == 'development',
+  watch: false,
 
   watchOptions: {
     aggregateTimeout: 100
@@ -47,12 +48,11 @@ module.exports = {
   devtool: mode == 'development' ? 'eval' : null,
 
   noParse: wrapRegexp(/\/node_modules\/(jquery)/),
-  noParse: wrapRegexp(/\/node_modules\/(backbone)/),
-  noParse: wrapRegexp(/\/node_modules\/(backbone.epoxy)/),
 
   plugins: [
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin(addHash('[name].css', 'contenthash:6'), {allChunks: true, disable: mode == 'development'}),
+    new CleanWebpackPlugin(['public'], {}),
+    new ExtractTextPlugin(addHash('[name].css', 'contenthash:6'), {allChunks: true}),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'default.jade',
@@ -69,13 +69,21 @@ module.exports = {
     $: "jquery",
     jQuery: "jquery",
     "window.jQuery": "jquery"
-    })
-    /*{
-      apply: function(compiler){
-        rimraf.sync(compiler.options.output.path);
-      }
-    }*/
-  ]
+    }),
+    new CopyWebpackPlugin([
+      { from: 'img', to: 'img' },
+      { from: 'styles', to: 'styles' },
+    ]),
+  ],
+
+  devServer: mode == 'development' ?
+    {
+      host: 'localhost',
+      port: 8080,
+      outputPath: './dist',
+      contentBase: `${__dirname}/dist`
+    }
+    : null
 };
 
 function wrapRegexp(regexp, label){
@@ -86,7 +94,7 @@ function wrapRegexp(regexp, label){
   return regexp;
 }
 
-if (mode != 'development'){
+if (mode == 'production'){
   module.exports.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       compress: {

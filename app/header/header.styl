@@ -1,75 +1,71 @@
-.headBack
+ptSans = 'PT Sans', sans-serif
+
+.header
   width 100%
   min-width 1200px
   background-color #D6DE77
   border-bottom 4px solid #5E650B
-
-#head
-  position relative
-  margin 0 auto
-  min-width 1200px
-  max-width 1600px
-  height 100px
-
-#company, #contacts
-  position absolute
-  display inline-block
-  vertical-align top
-
-#contacts
-  height 100px
-  width 450px
-  right 20px
   
-#cont
-  height inherit
-  margin-top 0px
-  background url('img/face2.png') 20px 4px no-repeat
-  background-size 90px
-
-#cont1, #cont2
-  color #7A7E47
-  font-size 20px
-  font-weight bold
-  font-family arial
-  margin-left 130px
-
-#cont1
-  margin-top 0px
-  padding-top 15px
-  font-family: 'PT Sans', sans-serif;
+  &--main
+    position relative
+    margin 0 auto
+    min-width 1200px
+    max-width 1600px
+    height 100px
+    padding-top 1px
   
-#cont2
-  margin-top -5px
-  color #5E6130
-  margin-left 167px
-    
-#company
-  background-image url('img/logo.png')
-  background-repeat no-repeat
-  background-position 60px 7px
-  background-size 70px
-  left 50px
-  height inherit
-  width 630px
+  &--company
+    position absolute
+    vertical-align top
+    background-image url('../img/header/logo.png')
+    background-repeat no-repeat
+    background-position 60px 7px
+    background-size 70px
+    left 50px
+    height inherit
   
+  &--slogan
+    color #7A7E47
+    font-weight bold
+    font-family ptSans
+    margin 0 auto
+    width 410px
+    font-size 26px
+    margin-top 27px
   
-#com1, #com2
-  color #7A7E47
-  font-size 20px
-  font-weight bold
-  font-family: 'PT Sans', sans-serif;
+  &--company-title
+    color #7A7E47
+    font-weight bold
+    font-family ptSans
+    font-size 46px
+    margin-top 20px
+    margin-left 170px
+    letter-spacing 10px
   
-#com1
-  font-size 46px
-  margin-top 20px
-  margin-left 170px
-  letter-spacing 10px
+  &--contacts
+    position absolute
+    vertical-align top
+    height 100px
+    width 450px
+    right 20px
+    top 0
+    background url('../img/header/face.png') 20px 4px no-repeat
+    background-size 90px
   
-#com2
-  position absolute
-  left 50%
-  right 50%
-  width 400px
-  margin-left -206px
-  font-size 26px
+  &--contacts-name
+    color #7A7E47
+    font-size 20px
+    font-weight bold
+    margin-left 130px
+    margin-top 0px
+    padding-top 15px
+    font-family ptSans
+  
+  &--contacts-phone
+    color #5E6130
+    font-size 20px
+    font-weight bold
+    font-family arial
+    margin-left 167px
+    margin-top -5px
+    text-decoration none

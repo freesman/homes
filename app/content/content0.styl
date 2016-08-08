@@ -1,0 +1,231 @@
+.content
+  margin 0 auto
+  width 1000px
+  border thin solid #BB9C6D
+  border-radius 20px
+  margin-top 20px
+  background url('../img/content/planshet.png') 435px 6px no-repeat, url('../img/content/plane.jpg') repeat
+  box-shadow 5px 5px 8px rgba(0,0,0,0.5)
+  
+.plane
+  background url('../img/content/paper.png') repeat
+  margin 20px
+  margin-top 46px
+  margin-right 40px
+  margin-left 40px
+  box-shadow 2px 2px 1px rgba(0,0,0,0.5)
+  border-top-right-radius 10px
+  min-height 720px
+
+.homes, .baths
+  height 210px
+  width 200px
+  margin-top 25px
+  margin-left 66px
+  display inline-block
+  cursor pointer
+  vertical-align top
+  &:hover
+    &.homes h3
+      text-decoration underline
+    &.baths h3
+      text-decoration underline
+  
+body 
+  background url('../img/content/background.png') repeat
+  
+.main
+  width 820px
+  margin-top 20px
+  margin-left 20px
+  
+.main p, .main h2, .main img
+  margin-left 10px
+
+
+.line
+  border none
+  position relative
+  z-index 30
+  background-color #949494
+  height 1px
+  top 43px
+.hidetabs
+  position absolute
+  height 4px
+  width 920px
+  z-index 30
+  margin-top 35px
+  background url('../img/content/paper.png') repeat
+#firstTab
+  margin-left -2px
+.ui-tabs
+  padding 0
+  margin-top -12px
+  border-color transparent
+  position relative
+.ui-tabs .ui-tabs-nav
+  padding 0px
+.ui-tabs .ui-tabs-nav li
+  border-color transparent
+  font-family sans
+  font-size 20px
+  position relative
+  z-index 20
+  margin-left 20px
+  border-radius 0px
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor
+  padding-right 50px
+  padding-left 50px
+  background-color transparent
+  color #362b36
+  font-weight normal
+  font-family hand
+.ui-widget-header
+  border none
+.ui-tabs .ui-tabs-nav li.ui-tabs-active
+  z-index 40
+  background-color transparent
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a
+  font-weight bold
+
+#tab-main
+  background url('../img/content/color1.png') repeat
+  transform skewY(1deg)
+  z-index 30
+  &:hover
+    border-color blue
+    //transform skewY(1deg)
+#tab-home
+  background url('../img/content/color2.png') repeat
+  transform skewY(-1deg)
+#tab-bath
+  background url('../img/content/color3.png') repeat
+  transform skewY(1deg)
+#tab-gallery
+  background url('../img/content/color4.png') repeat
+  transform skewY(-1deg)
+#tab-another
+  background url('../img/content/color5.png') repeat
+  transform skewY(1deg)
+
+
+.homes h3, .baths h3, .works h3
+  margin-left 55px
+  margin-bottom 0px
+  margin-top 0px
+  padding-bottom 2px
+ 
+.homes span, .baths span
+  margin-left 55px
+
+
+// single item when open
+.project, .price
+  font-family: 'Roboto Slab', serif;
+  font-weight 300
+  font-size 30px
+  padding-bottom 10px
+  text-align center
+.hideLi
+  display none
+
+  
+.singleImg, .singleGallery, .butClose
+  display inline-block
+  vertical-align top
+  margin-left 50px
+  margin-top 15px
+
+.butClose
+  background url('../img/content/back-arrow.png') no-repeat//, url('img/back7.png') no-repeat
+  background-size 110px 70px
+  height 70px
+  width 130px
+  margin-left 10px
+  margin-top -75px
+  cursor pointer
+  &:hover
+    background-position 1px 1px
+    //background url('img/back2.png') 5px 5px no-repeat//, url('img/back7.png') no-repeat
+  
+.singleGallery
+  height 460px
+  width 160px
+  
+.singleGallery .image, .singleGallery .planeFirst, .singleGallery .planeSecond
+  height 150px
+  width 150px
+  &:hover
+    border-right 1px solid black
+
+.active
+    border-right 1px solid gray
+  
+
+// gallery
+.works
+  height 200px
+  width 200px
+  margin-top 20px
+  margin-bottom 15px
+  margin-left 66px
+  display inline-block
+  cursor pointer
+  vertical-align top
+  &.works img
+    border 4px solid #c0c0c0
+  &:hover
+    &.works img
+      border 4px solid gray
+.gallery-name
+  font-family: 'Roboto Slab', serif;
+  width 200px
+  margin 0 auto
+  font-size 22px
+  margin-top 40px
+.gallery-bath-collection
+  width inherit
+
+//another tab
+.another-block
+  margin-top 20px
+  width 560px
+  margin 0 auto
+.another-text
+  color #ffffff
+  font-size 38px
+  font-style italic
+  font-weight bold
+  position absolute
+  top 50%
+  left 50%
+  width 200px
+  height 88px
+  margin-top -44px
+  margin-left -100px
+.another-element
+  position relative
+  background-color gray
+  display inline-block
+  vertical-align top
+  height 250px
+  width 250px
+  margin-right 40px
+  margin-top 20px
+  margin-bottom 10px
+  border 4px solid #BD9D74
+  border-radius 33px
+  &.__no-margin
+    margin-right 0
+  
+.another-element img
+  border-radius 28px
+  
+.another-title
+  width 420px
+  margin 0 auto
+  font-family: 'Roboto Slab', serif;
+  font-size 20px
+  font-weight bold
+  

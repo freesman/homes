@@ -23,7 +23,7 @@ GalleryView = Backbone.Epoxy.View.extend(
 )
 
 AppGallery = Backbone.Epoxy.View.extend(
-  el:'.gallery-bath-collection'
+  el:'.content--gallery-bath'
   collection: galleryCol
   itemView: GalleryView
   initialize: -> # title // picture // id
@@ -33,9 +33,11 @@ AppGallery = Backbone.Epoxy.View.extend(
     this.add('gal4')
     this.add('gal5')
   add: (pictureH)->
-    pictureH = '../img/gallery/bath/' + pictureH + '.jpg'
+    pictureH = 'img/gallery/bath/' + pictureH + '.jpg'
     idH = this.collection.length + 1
     this.collection.add({picture: pictureH, id: idH})
 )
 
 appgallery = new AppGallery
+
+console.log(appgallery)
