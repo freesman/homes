@@ -29,15 +29,12 @@ addGallery = (gallClass) ->
     closeEffect: 'none'
     prevEffect: 'none'
     nextEffect: 'none'
-    href: 'index.html'
     afterClose: -> $('body').css('overflow', 'auto')
     helpers:
       title: null
       thumbs: 
         width: 70 
         height: 70
-    beforeLoad: -> console.log ('loadbefore')
-    afterLoad: -> console.log ('loadafter')
   )
 
 createThumb = ->
