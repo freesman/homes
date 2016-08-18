@@ -8,7 +8,7 @@ AppView = Backbone.View.extend(
     'click .planeFirst' : 'singleGallery'
     'click .planeSecond' : 'singleGallery'
     'click #fancybox-overlay' : 'closeGallery'
-    'click #fancybox-thumbs a' : 'openThumbImg'
+    #'click #fancybox-thumbs a' : 'openThumbImg'
   clearSelection: ->
     if(window.getSelection) then window.getSelection().removeAllRanges()
   closer: ->

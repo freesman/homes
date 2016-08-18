@@ -5,7 +5,7 @@ require('./content/content')
 Backbone = require('backbone')
 Epoxy = require('backbone.epoxy')
 tabs = require('./scripts/tabs')
-require('./scripts/jquery-mousewheel/jquery.mousewheel')
+#require('jquery-mousewheel')
 fancybox = require('./scripts/fancybox/jquery.fancybox')
 require('./scripts/fancybox/jquery.fancybox-thumbs')
 
@@ -35,13 +35,15 @@ addGallery = (gallClass) ->
       title: null
       thumbs: 
         width: 70 
-        height: 70         
+        height: 70
+    beforeLoad: -> console.log ('loadbefore')
+    afterLoad: -> console.log ('loadafter')
   )
 
-openThumb = ->
+createThumb = ->
   addGallery('.thumb-bath')
   addGallery('.thumb-home')
 
-$(document).ready(openThumb)
+$(document).ready(createThumb)
 
 
