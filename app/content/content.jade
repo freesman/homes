@@ -49,11 +49,11 @@ hr.content--line
         .content--another-text Монтаж окон
         img(src='img/another/window.jpg' width='250px' height='250px')
   #tabs-single
-    .content--project
-    .content--price
-    img.content--singleImg(src='content/img/home-3d.png' height='460px' width='460px')
-    .content--singleGallery(data-id = '')
-      img.content--image(src='content/img/home-3d.png' height='150px' width='150px')
-      img.content--planeFirst(src='content/img/home-1p.png' height='150px' width='150px')
-      img.content--planeSecond(src='content/img/home-2p.png' height='150px' width='150px')
-    .content--butClose
+    .content--project(data-js-project-name)
+    .content--price(data-js-project-price)
+    img.content--singleImg(data-js-item-image height='460px' width='460px')
+    .content--singleGallery(data-js-collection-item data-id = '')
+      img.content--image(data-js-item-image-3d height='150px' width='150px')
+      img.content--planeFirst(data-js-item-image-plane1 height='150px' width='150px')
+      img.content--planeSecond(data-js-item-image-plane2 height='150px' width='150px')
+    .content--butClose(data-js-btn-close)

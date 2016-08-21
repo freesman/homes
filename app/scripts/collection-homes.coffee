@@ -22,20 +22,20 @@ HomeView = Backbone.Epoxy.View.extend(
   events:
     'click .home' : 'openHome'
   openHome: ->
-    homepath = 'content/img/homesGallery/' + this.model.get('model')
-    $('.singleGallery').attr('data-id', 'home')
-    $('.singleImg').attr('src', homepath + '/home-3d.jpg')
-    $('.image').attr('src', homepath + '/home-3d.jpg')
-    $('.planeFirst').attr('src', homepath + '/home-1p.jpg')
+    homepath = 'img/collection/homesGallery/' + this.model.get('model')
+    $('[data-js-collection-item]').attr('data-id', 'home')
+    $('[data-js-item-image]').attr('src', homepath + '/home-3d.jpg')
+    $('[data-js-item-image-3d]').attr('src', homepath + '/home-3d.jpg')
+    $('[data-js-item-image-plane1]').attr('src', homepath + '/home-1p.jpg')
     if this.model.get('secondFloor')
-      $('.planeSecond').css('display', 'block')
-      $('.planeSecond').attr('src', homepath + '/home-2p.jpg')
+      $('[data-js-item-image-plane2]').css('display', 'block')
+      $('[data-js-item-image-plane2]').attr('src', homepath + '/home-2p.jpg')
     else $('.planeSecond').css('display', 'none')
-    $('.project').text('проект ' + this.model.get('name'))
-    $('.price').text(this.model.get('price'))
-    $('.planeFirst').removeClass('active')
-    $('.planeSecond').removeClass('active')
-    $('.image').addClass('active')
+    $('[data-js-project-name]').text('проект ' + this.model.get('name'))
+    $('[data-js-project-price]').text(this.model.get('price'))
+    $('[data-js-item-image-plane1]').removeClass('active')
+    $('[data-js-item-image-plane2]').removeClass('active')
+    $('[data-js-item-image-3d]').addClass('active')
     $( "#tabs" ).tabs({active: 5})
 )
 
@@ -57,3 +57,4 @@ AppHome = Backbone.Epoxy.View.extend(
 )
 
 appHome = new AppHome
+console.log(appHome)

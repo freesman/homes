@@ -39,5 +39,3 @@ AppGallery = Backbone.Epoxy.View.extend(
 )
 
 appgallery = new AppGallery
-
-console.log(appgallery)

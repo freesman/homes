@@ -3,30 +3,28 @@ AppView = Backbone.View.extend(
   events:
     'click .fancybox-prev' : 'clearSelection'
     'click .fancybox-next' : 'clearSelection'
-    'click .butClose' : 'closer'
-    'click .image' : 'singleGallery'
-    'click .planeFirst' : 'singleGallery'
-    'click .planeSecond' : 'singleGallery'
+    'click [data-js-btn-close]' : 'closer'
+    'click [data-js-item-image-3d]' : 'singleGallery'
+    'click [data-js-item-image-plane1]' : 'singleGallery'
+    'click [data-js-item-image-plane2]' : 'singleGallery'
     'click #fancybox-overlay' : 'closeGallery'
     'click #fancybox-thumbs a' : 'openThumbImg'
   clearSelection: ->
     if(window.getSelection) then window.getSelection().removeAllRanges()
   closer: ->
-    switcher = $('.singleGallery').attr('data-id')
+    switcher = $('[data-js-collection-item]').attr('data-id')
     if switcher == 'home' then $( "#tabs" ).tabs({active: 1})
     else $( "#tabs" ).tabs({active: 2})
   singleGallery: (e)->
     srcAttr = e.currentTarget.src
-    $('.singleImg').attr('src', srcAttr)
-    $('.image').removeClass('active')
-    $('.planeFirst').removeClass('active')
-    $('.planeSecond').removeClass('active')
+    $('[data-js-item-image]').attr('src', srcAttr)
+    $('[data-js-item-image-3d]').removeClass('active')
+    $('[data-js-item-image-plane1]').removeClass('active')
+    $('[data-js-item-image-plane2]').removeClass('active')
     $(e.currentTarget).addClass('active')
   closeGallery: ->
     $('body').css('overflow', 'auto')
   openThumbImg: (e)->
-    console.log('err?')
-    console.log($(e.currentTarget).attr('data-id'))
     $.fancybox.jumpto($(e.currentTarget).attr('data-id'))
 )
 
