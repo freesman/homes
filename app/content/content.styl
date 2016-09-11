@@ -1,4 +1,5 @@
 robotoSlab = 'Roboto Slab', serif
+media-social = 'only screen and (max-width 1400px)'
 
 .plane
   background url('../img/content/paper.png') repeat
@@ -11,6 +12,7 @@ robotoSlab = 'Roboto Slab', serif
   min-height 720px
 
 .content
+  position relative
   margin 0 auto
   width 1000px
   border thin solid #BB9C6D
@@ -100,9 +102,10 @@ robotoSlab = 'Roboto Slab', serif
     margin-top 15px
     height 460px
     width 160px
-  &--singleGallery .image, &--singleGallery .planeFirst, &--singleGallery .planeSecond
+  &--singleGallery img
     height 150px
     width 150px
+    cursor pointer
     &:hover
       border-right 1px solid black
   &--butClose
@@ -119,6 +122,75 @@ robotoSlab = 'Roboto Slab', serif
     cursor pointer
     &:hover
       background-position 1px 1px
+  &--social
+    position absolute
+    width 100px
+    right -150px
+    top 120px
+    z-index 10
+    @media media-social
+      width 100px
+  &--social-vk-block
+    display block
+    text-decoration none
+    position relative
+    width 360px
+    height 100px
+    background-color #426B93
+    border-radius 25px
+    color #fff
+    font-size 35px
+    line-height 95px
+    padding-left 20px
+    &:hover
+      background-color #527fa4
+  &--social-instagram-block
+    display block
+    text-decoration none
+    position relative
+    width 360px
+    height 100px
+    background-color #426B93
+    border-radius 25px
+    color #fff
+    font-size 32px
+    line-height 95px
+    padding-left 20px
+    margin-top 50px
+    &:hover
+      background-color #527fa4
+  &--social-vk
+    position absolute
+    right 0
+    top 0
+    height 100px
+    width 100px
+    background-image url('../img/icons/vk-logo.png')
+    background-size 80px
+    background-repeat no-repeat
+    background-color #426B93
+    border-radius 50%
+    background-position 9px 28px
+    @media media-social
+      background-position 9px 28px
+    &:hover
+      @media media-social
+        background-color #527fa4
+  &--social-instagram
+    position absolute
+    right 0
+    top 0
+    height 100px
+    width 100px
+    background-image url('../img/icons/instagram-logo.png')
+    background-size 60px
+    background-repeat no-repeat
+    background-color #426B93
+    border-radius 50%
+    background-position 19px 20px
+    &:hover
+      @media media-social
+        background-color #527fa4
 
 .homes, .baths
   height 210px

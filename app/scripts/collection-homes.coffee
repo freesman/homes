@@ -51,7 +51,7 @@ AppHome = Backbone.Epoxy.View.extend(
     this.add('владимир', 'vladimir', '63 000', 'vladimir', true)
     this.add('яромир', 'yaromir', '47 000', 'yaromir', true)
   add: (nameH, pictureH, priceH, modelH, scndFlr)->
-    pictureH = '../img/homes/' + pictureH + '.jpg'
+    pictureH = 'img/homes/' + pictureH + '.jpg'
     priceH = priceH + ' руб.'
     this.collection.add({name: nameH, picture: pictureH, price: priceH, model: modelH, secondFloor: scndFlr})
 )
