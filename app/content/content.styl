@@ -130,6 +130,7 @@ media-social = 'only screen and (max-width 1400px)'
     z-index 10
     @media media-social
       width 100px
+      overflow hidden
   &--social-vk-block
     display block
     text-decoration none
@@ -142,8 +143,15 @@ media-social = 'only screen and (max-width 1400px)'
     font-size 35px
     line-height 95px
     padding-left 20px
+    @media media-social
+      right 280px
+      background-color transparent
     &:hover
       background-color #527fa4
+      @media media-social
+        background-color transparent
+      .content--social-vk
+        background-color #527fa4
   &--social-instagram-block
     display block
     text-decoration none
@@ -157,8 +165,15 @@ media-social = 'only screen and (max-width 1400px)'
     line-height 95px
     padding-left 20px
     margin-top 50px
+    @media media-social
+      right 280px
+      background-color transparent
     &:hover
       background-color #527fa4
+      @media media-social
+        background-color transparent
+      .content--social-instagram
+        background-color #527fa4
   &--social-vk
     position absolute
     right 0
@@ -171,11 +186,6 @@ media-social = 'only screen and (max-width 1400px)'
     background-color #426B93
     border-radius 50%
     background-position 9px 28px
-    @media media-social
-      background-position 9px 28px
-    &:hover
-      @media media-social
-        background-color #527fa4
   &--social-instagram
     position absolute
     right 0
@@ -188,9 +198,6 @@ media-social = 'only screen and (max-width 1400px)'
     background-color #426B93
     border-radius 50%
     background-position 19px 20px
-    &:hover
-      @media media-social
-        background-color #527fa4
 
 .homes, .baths
   height 210px
